@@ -90,3 +90,63 @@ The ADC produces values from 0 to 4095.
                                   |
                                   v
                               Gate Control
+Hardware Components
+LPC2129 ARM7 Microcontroller - 3 boards
+MCP3204 12-bit SPI ADC
+Potentiometer
+16x2 LCD
+LED Indicators - 3
+Servo Motor
+CAN Transceivers
+120Ω CAN termination
+Regulated Power Supplies
+Software Components
+Embedded C
+Keil µVision IDE
+Flash Magic / ISP Utility
+Proteus 8 Professional
+SPI
+CAN2
+PWM
+GPIO
+Communication
+SPI
+SPI is used for communication between Node 1 and the MCP3204 ADC.
+CAN
+CAN is used for communication between the three LPC2129 nodes. Node 1 broadcasts the ADC reading, while Node 2 and Node 3 independently receive and process the same data.
+ADC Conversion
+MCP3204 is a 12-bit ADC with an output range of 0 to 4095.
+For a 3.3 V reference:
+Voltage = ADC Value × 3.3 / 4096
+Project Features
+Automatic water-level monitoring
+CAN-based multi-node communication
+12-bit ADC measurement
+SPI-based ADC interfacing
+LCD status display
+Three-level LED indication
+Servo-based gate control
+Distributed embedded architecture
+Expandable CAN network
+Advantages
+Reduces manual intervention.
+Provides automatic gate control.
+Supports reliable multi-node communication.
+Separates sensing, display, and actuation functions.
+Easy to extend by adding additional CAN nodes.
+Provides real-time level indication.
+Applications
+Water reservoir management
+Irrigation canal gate control
+Check dam control
+Water storage tank monitoring
+Flood-control gate systems
+Industrial water-level monitoring
+CAN-based distributed automation
+Future Scope
+Replace the potentiometer with a calibrated ultrasonic or pressure-based water-level sensor.
+Add GSM or IoT connectivity for remote monitoring and alerts.
+Add data logging for water-level history.
+Implement interrupt-driven CAN reception.
+Add gate-position feedback for closed-loop control.
+Extend the system to control multiple gates using additional CAN nodes.
